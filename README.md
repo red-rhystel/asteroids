@@ -1,1 +1,1 @@
-# asteroids
+Guided boot.dev pygame project
