@@ -30,6 +30,7 @@ def main():
 
         # fill the screen with the color black
         screen.fill("black")
+        player.update(dt)
         # draw the player, must be after
         # filling but before the refresh
         player.draw(screen)
