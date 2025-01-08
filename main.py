@@ -1,6 +1,7 @@
 # this allows us to use code from
 # the open-source pygame library
 # throughout this file
+import sys
 import pygame
 from constants import *
 from player import Player
@@ -38,13 +39,19 @@ def main():
             if event.type == pygame.QUIT:
                 return
         # update objects before they're drawn
-        for thing in updatable:
-            thing.update(dt)
+        for obj in updatable:
+            obj.update(dt)
+        # check if any asteroids have collided with the player
+        for obj in asteroids:
+            if obj.collision_check(player):
+                print("Game over!")
+                sys.exit()
+
         # fill the screen with the color black
         screen.fill("black")
         # draw all objects in drawable
-        for thing in drawable:
-            thing.draw(screen)
+        for obj in drawable:
+            obj.draw(screen)
         # refresh the screen
         pygame.display.flip()
         
