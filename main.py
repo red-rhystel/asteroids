@@ -25,7 +25,7 @@ def main():
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
-    Shot.containers = (updatable, drawable)
+    Shot.containers = (shots, updatable, drawable)
     # create a screen object to display the game
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     # create a clock object to manage game speed
